@@ -7,7 +7,7 @@ const productALL = new ProductManager
 
 class CartManager {
     constructor() {
-        this.path = "./carts.json";
+        this.path = "./src/models/carts.json";
     }
 
     readCarts = async() => {
@@ -41,25 +41,26 @@ class CartManager {
     addProductInCart = async ( cartId, productId) => {
         let cartById = await this.exist(cartId)
         if(!cartById) return "Carrito no encontrado"
-        let productById = await this.exist(productId)
+        let productById = await productALL.exist(productId)
         if(!cartById) return "Producto no encontrado"
 
         let cartsALL = await this.readCarts()
         let cartFilter = cartsALL.filter( (cart)=> cart.id != cartId)
 
         if(cartById.products.some(prod => prod.id === productId)) {
-            let productInCart = cartById.products.find(prod => prod.id === productId)
-            productInCart.cantidad++
-            let cartsConcat =[productInCart, ...cartFilter]
+            let otroProductInCart = cartById.products.find
+            (prod => prod.id === productId)
+            otroProductInCart.cantidad++
+            console.log(otroProductInCart.cantidad)
+            let cartsConcat =[cartById, ...cartFilter]
             await this.writeCarts(cartsConcat)
             return "Producto  sumado al carrito"
             
         }
         
-
-        
-        let cartConcat = [{id:cartId, products : [{id:productById, cantidad : 1}]}, ...cartFilter]
-        await this.writeCarts(cartConcat)
+        cartById.products.push({id:productById.id, cantidad : 1})
+        let cartsConcat =[cartById, ...cartFilter]
+        await this.writeCarts(cartsConcat)
         return "Producto agregado al carrito"
     }
 

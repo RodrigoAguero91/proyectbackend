@@ -1,7 +1,6 @@
 import express from "express";
-import routerProd from "./routes/products.routes.js";
-import CartRouter from "./routes/carts.routes.js";
-
+import ProdRouter from "./routers/product.routes.js";
+import CartRouter from "./routers/carts.routes.js";
 
 
 
@@ -11,9 +10,10 @@ const PORT = 8080;
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
+app.use("/api/products", ProdRouter)
+app.use("/api/cart", CartRouter)
 
-app.use("/api/products", routerProd)
-app.use("/api/carts", CartRouter)
+
 
 app.listen(PORT, () => {
     console.log(`Server on port ${PORT}`)
