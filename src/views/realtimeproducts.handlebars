@@ -1,0 +1,86 @@
+<div class="container mt-5">
+        <form class="row g-3 mx-4" id="formproduct">
+            <h2 class="mb-4">CREAR PRODUCTOS</h2>
+
+            <div class="col-md-6">
+                <label for="title" class="form-label">Nombre del Prodcuto</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="title" id="title" placeholder="Escribir Nombre del producto..." required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="description" class="form-label">Description</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="description" id="description" placeholder="Describir el producto..." required>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="stock" class="form-label">Stock</label>
+                <div class="input-group">
+                <input class="form-control" type="number" name="stock" id="stock" placeholder="Cantidad de stock..." required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="category" class="form-label">Categoria</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="category" id="category" placeholder="Categoria del producto..." required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="price" class="form-label">Precio</label>
+                <div class="input-group">
+                <input class="form-control" type="number" name="price" id="price" placeholder="Precio del producto..." required>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-check mt4">
+                    <input name="status" class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Status</label> 
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="imagen" class="form-label">Imagen</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="imagen" id="imagen" placeholder="Ej: http://examples.com/img.png" >
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="code" class="form-label">Codigo</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="code" id="code" placeholder="Ej: asd123" required>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4">
+                <button class="btn btn-primary" type="submit" id="add-btn">AGREGAR PRODUCTO</button>
+            </div>
+
+            <h2 class="mt-4">ELIMINAR PRODUCTOS</h2>
+            <div class="col-md-6">
+                <label for="id-prod" class="form-label">ID del producto a eliminar...</label>
+                <div class="input-group">
+                <input class="form-control" type="text" name="code" id="id-prod" placeholder="Ej:asg354treshg" required>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <button class="btn btn-danger" type="button" id="delete">ELIMINAR</button>
+            </div>
+            
+        </form>
+
+        <div class="row mt-4" id="listproducts"></div>
+
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtime.js"></script>
