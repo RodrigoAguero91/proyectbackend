@@ -4,29 +4,28 @@
             {{#each products}}
                 <div class="col mb-4">
                     <div class="card h-100 bg-light">
-                        <div class="card-heard bg-primary text-white">
+                        <div class="card-heard bg-success text-white">
                             <i class="bi bi-tag">ID:{{this.id}}</i>
                         </div>
-                        <div class="card-body ">
-                                
-                                <ul class="list-unstyled">
-                                    <li></i>Titulo:{{this.title}}</li>
-                                    <li>description:{{this.description}}</li>
-                                    <li></i>Precio:${{this.price}}</li>
-                                    <li>Stock:{{this.stock}}</li>
-                                    <li></i>Status:{{this.status}}</li>
-                                    <li>Categoria:{{this.category}}</li>
-                                    <li>Codigo:{{this.code}}</li>
-                                    <li>
-                                        <img>{{this.imagen}}</img>
+                            <div class="card-body bg-light">
+                                    
+                                    <ul class="list-unstyled">
+                                        <li>Titulo:{{this.title}}</li>
+                                        <li>Description:{{this.description}}</li>
+                                        <li>Precio:${{this.price}}</li>
+                                        <li>Stock:{{this.stock}}</li>
+                                        <li>Status:{{this.status}}</li>
+                                        <li>Categoria:{{this.category}}</li>
+                                        <li>Codigo:{{this.code}}</li>
+                                        <li>
+                                            <img>Img:{{this.imagen}}</img>
+                                        </li>
 
-                                    </li>
-                                    
-                                    
-                                </ul>
-                        </div>  
+                                    </ul>
+                            </div>  
                     </div>
                 </div>
             {{/each}}
         </div>
 </div>    
+
